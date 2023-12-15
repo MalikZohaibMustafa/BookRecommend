@@ -29,6 +29,5 @@ def recommendations(book_title):
     return {"recommendations": recommendations, "user_input": book_title}
 
     return render_template('recommendations.html', book_title=book_title, recommendations=recommendations)
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
