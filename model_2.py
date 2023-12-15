@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 from flask import Flask, render_template, request, redirect, url_for
 from flask_cors import CORS
-
+import os
 app = Flask(__name__)
 CORS(app)  # This will enable CORS for all routes
 
@@ -28,6 +28,6 @@ def recommendations(book_title):
     recommendations = book_ML(book_title)
     return {"recommendations": recommendations, "user_input": book_title}
 
-    return render_template('recommendations.html', book_title=book_title, recommendations=recommendations)
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
