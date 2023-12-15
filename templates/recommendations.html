@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Recommendations</title>
+</head>
+<body>
+    <h1>Book Recommendations</h1>
+    <p>You searched for: <strong>{{ book_title }}</strong></p>
+    <h2>Recommended Books:</h2>
+    <ul>
+        {% for recommendation in recommendations %}
+            <li>{{ recommendation }}</li>
+        {% endfor %}
+    </ul>
+    <p><a href="/">Back to Search</a></p>
+</body>
+</html>
